@@ -44,9 +44,9 @@ def main():
         if user_input.lower() in ["exit", "quit"]:
             break
 
-        # Mode switch
 
-if user_input.lower().startswith("mode"):
+# Mode switch
+        if user_input.lower().startswith("mode"):
             if "teaching" in user_input.lower():
                 TEACHING_MODE = True
                 console.print("[green]Switched to Teaching Mode[/green]")
@@ -58,8 +58,7 @@ if user_input.lower().startswith("mode"):
             continue
 
         # Normal query
-
-command = llm_suggest_command(user_input, TEACHING_MODE)
+        command = llm_suggest_command(user_input, TEACHING_MODE)
         console.print(f"[yellow]Suggested:[/yellow] {command}")
 
         # Log interaction
@@ -68,4 +67,5 @@ command = llm_suggest_command(user_input, TEACHING_MODE)
 
 if __name__ == "__main__":
     main()
+
 
